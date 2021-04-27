@@ -1,0 +1,29 @@
+""""
+5. В массиве найти максимальный отрицательный элемент. Вывести на экран его значение и позицию в массиве.
+
+"""
+
+from random import randint
+
+SIZE = 10
+MIN_ITEM = -10
+MAX_ITEM = 10
+array = [randint(MIN_ITEM, MAX_ITEM) for _ in range(SIZE)]
+
+print(array)
+
+i = 0
+temp = 0
+numb = 0
+pos = 0
+
+for el in array:
+    if el < 0 and numb >= 0:
+        numb = el
+        pos = i
+    if 0 > el > numb:
+        numb = el
+        pos = i
+    i += 1
+
+print(numb, pos)
